@@ -672,7 +672,7 @@ CARP_HEAVY
 $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
-    $Devel::PatchPerl::VERSION = '0.62';
+    $Devel::PatchPerl::VERSION = '0.66';
   }
   
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
@@ -684,6 +684,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   use IO::File;
   use IPC::Cmd qw[can_run run];
   use Devel::PatchPerl::Hints qw[hint_file];
+  use Module::Pluggable search_path => ['Devel::PatchPerl::Plugin'];
   use vars qw[@ISA @EXPORT_OK];
   
   @ISA       = qw(Exporter);
@@ -836,7 +837,39 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
            $sub->(@args);
          }
       }
+      _process_plugin( version => $vers, source => $source, patchexe => $patch_exe );
     }
+  }
+  
+  sub _process_plugin {
+    my %args = @_;
+    return unless my $possible = $ENV{PERL5_PATCHPERL_PLUGIN};
+    my ($plugin) = grep { $possible eq $_ or /\Q$possible\E$/ } __PACKAGE__->plugins;
+    unless ( $plugin ) {
+      warn "# You specified a plugin '", $ENV{PERL5_PATCHPERL_PLUGIN},
+           "' that isn't installed, just thought you might be interested.\n";
+      return;
+    }
+    {
+      local $@;
+      eval "require $plugin";
+      if ($@) {
+        die "# I tried to load '", $ENV{PERL5_PATCHPERL_PLUGIN},
+            "' but it didn't work out. Here is what happened '$@'\n";
+      }
+    }
+    {
+      local $@;
+      eval {
+        $plugin->patchperl(
+          %args,
+        );
+      };
+      if ($@) {
+        warn "# Warnings from the plugin: '$@'\n";
+      }
+    }
+    return 1;
   }
   
   sub _is
@@ -2428,7 +2461,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 VERSION
   
-  version 0.62
+  version 0.66
   
   =head1 SYNOPSIS
   
@@ -2464,9 +2497,15 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =back
   
+  =head1 PLUGIN SYSTEM
+  
+  See L<Devel::PatchPerl::Plugin> for details of Devel::PatchPerl's plugin system.
+  
   =head1 SEE ALSO
   
   L<Devel::PPPort>
+  
+  L<Devel::PatchPerl::Plugin>
   
   =head1 AUTHOR
   
@@ -2474,7 +2513,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2011 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
@@ -2486,7 +2525,7 @@ DEVEL_PATCHPERL
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
-    $Devel::PatchPerl::Hints::VERSION = '0.62';
+    $Devel::PatchPerl::Hints::VERSION = '0.66';
   }
   
   #ABSTRACT: replacement 'hints' files
@@ -3669,6 +3708,47 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   LgpjYXNlICIkZF9vbGRwdGhyZWFkcyIgaW4KICAgICcnfCR1bmRlZikKCWRfY3J5cHRfcl9wcm90
   bz0ndW5kZWYnCglkX2dldGdyZW50X3JfcHJvdG89J3VuZGVmJwoJZF9nZXRwd2VudF9yX3Byb3Rv
   PSd1bmRlZicKCWRfc3RyZXJyb3Jfcl9wcm90bz0ndW5kZWYnCgk7OwogICAgZXNhYwo=',
+  'cygwin' =>
+  'IyEgL2Jpbi9zaAojIGN5Z3dpbi5zaCAtIGhpbnRzIGZvciBidWlsZGluZyBwZXJsIHVzaW5nIHRo
+  ZSBDeWd3aW4gZW52aXJvbm1lbnQgZm9yIFdpbjMyCiMKCiMgbm90IG90aGVyd2lzZSBzZXR0YWJs
+  ZQpleGVfZXh0PScuZXhlJwpmaXJzdG1ha2VmaWxlPSdHTlVtYWtlZmlsZScKY2FzZSAiJGxkbGli
+  cHRobmFtZSIgaW4KJycpIGxkbGlicHRobmFtZT1QQVRIIDs7CmVzYWMKYXJjaG9ianM9J2N5Z3dp
+  bi5vJwoKIyBtYW5kYXRvcnkgKG92ZXJyaWRlcyBpbmNvcnJlY3QgZGVmYXVsdHMpCnRlc3QgLXog
+  IiRjYyIgJiYgY2M9J2djYycKaWYgdGVzdCAteiAiJHBsaWJwdGgiCnRoZW4KICAgIHBsaWJwdGg9
+  YGdjYyAtcHJpbnQtZmlsZS1uYW1lPWxpYmMuYWAKICAgIHBsaWJwdGg9YGRpcm5hbWUgJHBsaWJw
+  dGhgCiAgICBwbGlicHRoPWBjZCAkcGxpYnB0aCAmJiBwd2RgCmZpCnNvPSdkbGwnCiMgLSBlbGlt
+  aW5hdGUgLWxjLCBpbXBsaWVkIGJ5IGdjYyBhbmQgYSBzeW1saW5rIHRvIGxpYmN5Z3dpbi5hCmxp
+  YnN3YW50ZWQ9YGVjaG8gIiAkbGlic3dhbnRlZCAiIHwgc2VkIC1lICdzLyBjIC8gL2cnYAojIC0g
+  ZWxpbWluYXRlIC1sbSwgc3ltbGluayB0byBsaWJjeWd3aW4uYQpsaWJzd2FudGVkPWBlY2hvICIg
+  JGxpYnN3YW50ZWQgIiB8IHNlZCAtZSAncy8gbSAvIC9nJ2AKIyAtIGVsaW1pbmF0ZSAtbHV0aWws
+  IHN5bWJvbHMgYXJlIGFsbCBpbiBsaWJjeWd3aW4uYQpsaWJzd2FudGVkPWBlY2hvICIgJGxpYnN3
+  YW50ZWQgIiB8IHNlZCAtZSAncy8gdXRpbCAvIC9nJ2AKIyAtIGFkZCBsaWJnZGJtX2NvbXBhdCAk
+  bGlic3dhbnRlZApsaWJzd2FudGVkPSIkbGlic3dhbnRlZCBnZGJtX2NvbXBhdCIKdGVzdCAteiAi
+  JG9wdGltaXplIiAmJiBvcHRpbWl6ZT0nLU8zJwptYW4zZXh0PSczcG0nCnRlc3QgLXogIiR1c2U2
+  NGJpdGludCIgJiYgdXNlNjRiaXRpbnQ9J2RlZmluZScKdGVzdCAteiAiJHVzZWl0aHJlYWRzIiAm
+  JiB1c2VpdGhyZWFkcz0nZGVmaW5lJwpjY2ZsYWdzPSIkY2NmbGFncyAtRFBFUkxfVVNFX1NBRkVf
+  UFVURU5WIC1VX19TVFJJQ1RfQU5TSV9fIgojIC0gb3RoZXJ3aXNlIGk2ODYtY3lnd2luCmFyY2hu
+  YW1lPSdjeWd3aW4nCgojIGR5bmFtaWMgbG9hZGluZwojIC0gb3RoZXJ3aXNlIC1mcGljCmNjY2Rs
+  ZmxhZ3M9JyAnCmxkZGxmbGFncz0nIC0tc2hhcmVkJwp0ZXN0IC16ICIkbGQiICYmIGxkPSdnKysn
+  CgpjYXNlICIkb3N2ZXJzIiBpbgogICAgIyBDb25maWd1cmUgZ2V0cyB0aGVzZSB3cm9uZyBpZiB0
+  aGUgSVBDIHNlcnZlciBpc24ndCB5ZXQgcnVubmluZzoKICAgICMgb25seSB1c2UgZm9yIDEuNS43
+  IGFuZCBvbndhcmRzCiAgICBbMi05XSp8MS5bNi05XSp8MS5bMS01XVswLTldKnwxLjUuWzctOV0q
+  fDEuNS5bMS02XVswLTldKikKICAgICAgICBkX3NlbWN0bF9zZW1pZF9kcz0nZGVmaW5lJwogICAg
+  ICAgIGRfc2VtY3RsX3NlbXVuPSdkZWZpbmUnCiAgICAgICAgOzsKZXNhYwoKY2FzZSAiJG9zdmVy
+  cyIgaW4KICAgIFsyLTldKnwxLls2LTldKikKICAgICAgICAjIElQdjYgb25seSBzaW5jZSAxLjcK
+  ICAgICAgICBkX2luZXRudG9wPSdkZWZpbmUnCiAgICAgICAgZF9pbmV0cHRvbj0nZGVmaW5lJwog
+  ICAgICAgIDs7CiAgICAqKQogICAgICAgICMgSVB2NiBub3QgaW1wbGVtZW50ZWQgYmVmb3JlIGN5
+  Z3dpbi0xLjcKICAgICAgICBkX2luZXRudG9wPSd1bmRlZicKICAgICAgICBkX2luZXRwdG9uPSd1
+  bmRlZicKZXNhYwoKIyBjb21waWxlIFdpbjMyQ09SRSAibW9kdWxlIiBhcyBzdGF0aWMuIHRyeSB0
+  byBhdm9pZCB0aGUgc3BhY2UuCmlmIHRlc3QgLXogIiRzdGF0aWNfZXh0IjsgdGhlbgogIHN0YXRp
+  Y19leHQ9IldpbjMyQ09SRSIKZWxzZQogIHN0YXRpY19leHQ9IiRzdGF0aWNfZXh0IFdpbjMyQ09S
+  RSIKZmkKCiMgV2luOXggcHJvYmxlbSB3aXRoIG5vbi1ibG9ja2luZyByZWFkIGZyb20gYSBjbG9z
+  ZWQgcGlwZQpkX2VvZm5ibGs9J2RlZmluZScKCiMgc3VwcHJlc3MgYXV0by1pbXBvcnQgd2Fybmlu
+  Z3MKbGRmbGFncz0iJGxkZmxhZ3MgLVdsLC0tZW5hYmxlLWF1dG8taW1wb3J0IC1XbCwtLWV4cG9y
+  dC1hbGwtc3ltYm9scyAtV2wsLS1lbmFibGUtYXV0by1pbWFnZS1iYXNlIgpsZGRsZmxhZ3M9IiRs
+  ZGRsZmxhZ3MgJGxkZmxhZ3MiCgojIHN0cmlwIGV4ZSdzIGFuZCBkbGwncywgYmV0dGVyIGRvIGl0
+  IGFmdGVyd2FyZHMKI2xkZmxhZ3M9IiRsZGZsYWdzIC1zIgojY2NkbGZsYWdzPSIkY2NkbGZsYWdz
+  IC1zIgojbGRkbGZsYWdzPSIkbGRkbGZsYWdzIC1zIgo=',
   );
   
   my %files = (
@@ -3679,6 +3759,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
     'dragonfly' => 'dragonfly.sh',
     'darwin' => 'darwin.sh',
     'hpux' => 'hpux.sh',
+    'cygwin' => 'cygwin.sh',
   );
   
   sub hint_file {
@@ -3703,7 +3784,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 VERSION
   
-  version 0.62
+  version 0.66
   
   =head1 SYNOPSIS
   
@@ -3758,7 +3839,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2011 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
@@ -3766,6 +3847,101 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   =cut
   
 DEVEL_PATCHPERL_HINTS
+
+$fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
+  package Devel::PatchPerl::Plugin;
+  {
+    $Devel::PatchPerl::Plugin::VERSION = '0.66';
+  }
+  
+  #ABSTRACT: Devel::PatchPerl plugins explained
+  
+  use strict;
+  use warnings;
+  
+  qq[Plug it in];
+  
+  
+  __END__
+  =pod
+  
+  =head1 NAME
+  
+  Devel::PatchPerl::Plugin - Devel::PatchPerl plugins explained
+  
+  =head1 VERSION
+  
+  version 0.66
+  
+  =head1 DESCRIPTION
+  
+  This document explains the L<Devel::PatchPerl> plugin system.
+  
+  Plugins are a mechanism for providing additional functionality to
+  L<Devel::PatchPerl>.
+  
+  Plugins are searched for in the L<Devel::PatchPerl::Plugin> namespace.
+  
+  =head1 INITIALISATION
+  
+  The plugin constructor is C<patchperl>.
+  
+  A plugin is specified using the C<PERL5_PATCHPERL_PLUGIN> environment
+  variable. It may either be specified in full (ie. C<Devel::PatchPerl::Plugin::Feegle>)
+  or as the short part (ie. C<Feegle>).
+  
+    $ export PERL5_PATCHPERL_PLUGIN=Devel::PatchPerl::Plugin::Feegle
+  
+    $ export PERL5_PATCHPERL_PLUGIN=Feegle
+  
+  When L<Devel::PatchPerl> has identified the perl source patch and done its patching
+  it will attempt to load the plugin identified. It will then call the class method
+  C<patchperl> for the plugin package, with the following parameters:
+  
+    'version', the Perl version of the source tree;
+    'source', the absolute path to the Perl source tree;
+    'patchexe', the 'patch' utility that can be used;
+  
+  Plugins are called with the current working directory being the root of the
+  Perl source tree, ie. C<source>.
+  
+  Summarised:
+  
+    $ENV{PERL5_PATCHPERL_PLUGIN} = 'Devel::PatchPerl::Plugin::Feegle';
+  
+    my $plugin = $ENV{PERL5_PATCHPERL_PLUGIN};
+  
+    eval "require $plugin";
+  
+    eval {
+      $plugin->patchperl( version => $vers, source => $srcdir, patchexe => $patch );
+    };
+  
+  =head1 WHAT CAN PLUGINS DO?
+  
+  Anything you desire to a Perl source tree.
+  
+  =head1 WHY USE AN ENVIRONMENT VARIABLE TO SPECIFY PLUGINS?
+  
+  So that indicating a plugin to use can be specified independently of whatever mechanism is
+  calling L<Devel::PatchPerl> to do its bidding.
+  
+  Think L<perlbrew>.
+  
+  =head1 AUTHOR
+  
+  Chris Williams <chris@bingosnet.co.uk>
+  
+  =head1 COPYRIGHT AND LICENSE
+  
+  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
+  
+  This is free software; you can redistribute it and/or modify it under
+  the same terms as the Perl 5 programming language system itself.
+  
+  =cut
+  
+DEVEL_PATCHPERL_PLUGIN
 
 $fatpacked{"ExtUtils/Command/MM.pm"} = <<'EXTUTILS_COMMAND_MM';
   package ExtUtils::Command::MM;
@@ -27949,8 +28125,13 @@ unshift @INC, sub {
 };
 
 } # END OF FATPACK CODE
+#!/Users/gugod/perl5/perlbrew/perls/perl-5.14.1/bin/perl
 
-package patchperl;
+eval 'exec /Users/gugod/perl5/perlbrew/perls/perl-5.14.1/bin/perl  -S $0 ${1+"$@"}'
+    if 0; # not running under some shell
+
+package
+  patchperl;
 # ABSTRACT: patch a perl source tree
 
 use strict;
@@ -27968,7 +28149,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 0.62
+version 0.66
 
 =head1 AUTHOR
 
@@ -27976,7 +28157,7 @@ Chris Williams <chris@bingosnet.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Chris Williams and Marcus Holland-Moritz.
+This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
