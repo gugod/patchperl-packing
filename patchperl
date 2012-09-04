@@ -5885,7 +5885,7 @@ DEVEL_INNERPACKAGE
 $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
-    $Devel::PatchPerl::VERSION = '0.74';
+    $Devel::PatchPerl::VERSION = '0.76';
   }
   
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
@@ -7668,8 +7668,8 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   sub _patch_589_perlio_c
   {
     _patch(<<'END');
-  --- a/perlio.c
-  +++ b/perlio.c
+  --- perlio.c
+  +++ perlio.c
   @@ -2323,6 +2323,12 @@ PerlIO_init(pTHX)
    {
        /* MUTEX_INIT(&PL_perlio_mutex) is done in PERL_SYS_INIT3(). */
@@ -7699,7 +7699,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 VERSION
   
-  version 0.74
+  version 0.76
   
   =head1 SYNOPSIS
   
@@ -7769,7 +7769,7 @@ DEVEL_PATCHPERL
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
-    $Devel::PatchPerl::Hints::VERSION = '0.74';
+    $Devel::PatchPerl::Hints::VERSION = '0.76';
   }
   
   #ABSTRACT: replacement 'hints' files
@@ -9039,7 +9039,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 VERSION
   
-  version 0.74
+  version 0.76
   
   =head1 SYNOPSIS
   
@@ -9106,7 +9106,7 @@ DEVEL_PATCHPERL_HINTS
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
   {
-    $Devel::PatchPerl::Plugin::VERSION = '0.74';
+    $Devel::PatchPerl::Plugin::VERSION = '0.76';
   }
   
   #ABSTRACT: Devel::PatchPerl plugins explained
@@ -9126,7 +9126,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   =head1 VERSION
   
-  version 0.74
+  version 0.76
   
   =head1 DESCRIPTION
   
@@ -45904,7 +45904,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 0.74
+version 0.76
 
 =head1 AUTHOR
 
