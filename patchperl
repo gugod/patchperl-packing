@@ -5885,7 +5885,7 @@ DEVEL_INNERPACKAGE
 $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
-    $Devel::PatchPerl::VERSION = '0.76';
+    $Devel::PatchPerl::VERSION = '0.78';
   }
   
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
@@ -7688,9 +7688,8 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   qq[patchin'];
   
-  
-  
   __END__
+  
   =pod
   
   =head1 NAME
@@ -7699,7 +7698,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 VERSION
   
-  version 0.76
+  version 0.78
   
   =head1 SYNOPSIS
   
@@ -7757,19 +7756,18 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2013 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
   
   =cut
-  
 DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
-    $Devel::PatchPerl::Hints::VERSION = '0.76';
+    $Devel::PatchPerl::Hints::VERSION = '0.78';
   }
   
   #ABSTRACT: replacement 'hints' files
@@ -9004,6 +9002,33 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   IHRvIGltcHJvdmluZyB0aGUgQ29uZmlndXJlIHRlc3QuCiMgTWVhbndoaWxlLCB0aGUgZm9sbG93
   aW5nIHdvcmthcm91bmQgc2hvdWxkIGJlIHNhZmUgb24gYWxsIHZlcnNpb25zCiMgb2YgRnJlZUJT
   RC4KZF9wcmludGZfZm9ybWF0X251bGw9J3VuZGVmJwo=',
+  'midnightbsd' =>
+  'dXNldmZvcms9J3RydWUnCmNhc2UgIiR1c2VteW1hbGxvYyIgaW4KICAgICIiKSB1c2VteW1hbGxv
+  Yz0nbicKICAgICAgICA7Owplc2FjCmxpYnN3YW50ZWQ9YGVjaG8gJGxpYnN3YW50ZWQgfCBzZWQg
+  J3MvIG1hbGxvYyAvIC8nYAoKb2JqZm9ybWF0PWAvdXNyL2Jpbi9vYmpmb3JtYXRgCmlmIFsgeCRv
+  Ympmb3JtYXQgPSB4ZWxmIF07IHRoZW4KICAgIGxpYnB0aD0iL3Vzci9saWIgL3Vzci9sb2NhbC9s
+  aWIiCiAgICBnbGlicHRoPSIvdXNyL2xpYiAvdXNyL2xvY2FsL2xpYiIKICAgIGxkZmxhZ3M9Ii1X
+  bCwtRSAiCiAgICBsZGRsZmxhZ3M9Ii1zaGFyZWQgIgplbHNlCiAgICBpZiBbIC1lIC91c3IvbGli
+  L2FvdXQgXTsgdGhlbgogICAgICAgIGxpYnB0aD0iL3Vzci9saWIvYW91dCAvdXNyL2xvY2FsL2xp
+  YiAvdXNyL2xpYiIKICAgICAgICBnbGlicHRoPSIvdXNyL2xpYi9hb3V0IC91c3IvbG9jYWwvbGli
+  IC91c3IvbGliIgogICAgZmkKICAgIGxkZGxmbGFncz0nLUJzaGFyZWFibGUnCmZpCmNjY2RsZmxh
+  Z3M9Jy1EUElDIC1mUElDJwoKY2NmbGFncz0iJHtjY2ZsYWdzfSAtREhBU19GUFNFVE1BU0sgLURI
+  QVNfRkxPQVRJTkdQT0lOVF9IIgppZiAvdXNyL2Jpbi9maWxlIC1MIC91c3IvbGliL2xpYmMuc28g
+  fCAvdXNyL2Jpbi9ncmVwIC12cSAibm90IHN0cmlwcGVkIiA7IHRoZW4KICAgIHVzZW5tPWZhbHNl
+  CmZpCgpzaWduYWxfdD0ndm9pZCcKZF92b2lkc2lnPSdkZWZpbmUnCgojIFRoaXMgc2NyaXB0IFVV
+  L3VzZXRocmVhZHMuY2J1IHdpbGwgZ2V0ICdjYWxsZWQtYmFjaycgYnkgQ29uZmlndXJlIAojIGFm
+  dGVyIGl0IGhhcyBwcm9tcHRlZCB0aGUgdXNlciBmb3Igd2hldGhlciB0byB1c2UgdGhyZWFkcy4K
+  Y2F0ID4gVVUvdXNldGhyZWFkcy5jYnUgPDwnRU9DQlUnCmNhc2UgIiR1c2V0aHJlYWRzIiBpbgok
+  ZGVmaW5lfHRydWV8W3lZXSopCglsZGZsYWdzPSItcHRocmVhZCAkbGRmbGFncyIKCXNldCBgZWNo
+  byBYICIkbGlic3dhbnRlZCAifCBzZWQgLWUgJ3MvIGMgLy8nYAoJc2hpZnQKCWxpYnN3YW50ZWQ9
+  IiQqIgoJIyBDb25maWd1cmUgd2lsbCBwcm9iYWJseSBwaWNrIHRoZSB3cm9uZyBsaWJjIHRvIHVz
+  ZSBmb3Igbm0gc2Nhbi4KCSMgVGhlIHNhZmVzdCBxdWljay1maXggaXMganVzdCB0byBub3QgdXNl
+  IG5tIGF0IGFsbC4uLgoJdXNlbm09ZmFsc2UKCiAgICAgICAgdW5zZXQgbGNfcgoKCSMgRXZlbiB3
+  aXRoIHRoZSBtYWxsb2MgbXV0ZXhlcyB0aGUgUGVybCBtYWxsb2MgZG9lcyBub3QKCSMgc2VlbSB0
+  byBiZSB0aHJlYWRzYWZlIGluIE1pZG5pZ2h0QlNEPwoJY2FzZSAiJHVzZW15bWFsbG9jIiBpbgoJ
+  JycpIHVzZW15bWFsbG9jPW4gOzsKCWVzYWMKZXNhYwpFT0NCVQoKIyBtYWxsb2Mgd3JhcCB3b3Jr
+  cwpjYXNlICIkdXNlbWFsbG9jd3JhcCIgaW4KJycpIHVzZW1hbGxvY3dyYXA9J2RlZmluZScgOzsK
+  ZXNhYwo=',
   );
   
   my %files = (
@@ -9015,6 +9040,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
     'darwin' => 'darwin.sh',
     'hpux' => 'hpux.sh',
     'cygwin' => 'cygwin.sh',
+    'midnightbsd' => 'midnightbsd.sh',
   );
   
   sub hint_file {
@@ -9029,8 +9055,8 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   qq'nudge nudge wink wink';
   
-  
   __END__
+  
   =pod
   
   =head1 NAME
@@ -9039,7 +9065,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 VERSION
   
-  version 0.76
+  version 0.78
   
   =head1 SYNOPSIS
   
@@ -9094,19 +9120,18 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2013 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
   
   =cut
-  
 DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
   {
-    $Devel::PatchPerl::Plugin::VERSION = '0.76';
+    $Devel::PatchPerl::Plugin::VERSION = '0.78';
   }
   
   #ABSTRACT: Devel::PatchPerl plugins explained
@@ -9116,8 +9141,8 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   qq[Plug it in];
   
-  
   __END__
+  
   =pod
   
   =head1 NAME
@@ -9126,7 +9151,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   =head1 VERSION
   
-  version 0.76
+  version 0.78
   
   =head1 DESCRIPTION
   
@@ -9189,13 +9214,12 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2013 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
   
   =cut
-  
 DEVEL_PATCHPERL_PLUGIN
 
 $fatpacked{"ExtUtils/Command.pm"} = <<'EXTUTILS_COMMAND';
@@ -45896,6 +45920,7 @@ use Devel::PatchPerl;
 Devel::PatchPerl->patch_source($ARGV[1], $ARGV[0]);
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -45904,7 +45929,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 0.76
+version 0.78
 
 =head1 AUTHOR
 
@@ -45912,10 +45937,9 @@ Chris Williams <chris@bingosnet.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Chris Williams and Marcus Holland-Moritz.
+This software is copyright (c) 2013 by Chris Williams and Marcus Holland-Moritz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
