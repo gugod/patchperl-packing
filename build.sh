@@ -2,6 +2,8 @@
 
 perlenv=perl-5.8.8@patchperl-packing
 
+cd $(dirname $0)
+
 eval "$(perlbrew init-in-bash)"
 perlbrew use ${perlenv}
 
@@ -12,7 +14,7 @@ else
     exit 1
 fi
 
-git clean -f
+git clean -d -f
 git pull
 
 cpanm Devel::PatchPerl App::FatPacker || exit 1
@@ -44,4 +46,7 @@ if [[ "$git_changed" == "" ]]; then
 else
     git commit -m "rebuild with $versions"
     git push
+    git clean -d -f
+    git pull
 fi
+
