@@ -5885,7 +5885,7 @@ DEVEL_INNERPACKAGE
 $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
-    $Devel::PatchPerl::VERSION = '0.94';
+    $Devel::PatchPerl::VERSION = '0.96';
   }
   
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
@@ -8051,8 +8051,8 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
     _patch(<<'BOBBLE');
   diff --git a/regexec.c b/regexec.c
   index bc38839..b865b46 100644
-  --- a/regexec.c
-  +++ b/regexec.c
+  --- regexec.c
+  +++ regexec.c
   @@ -6662,7 +6662,7 @@ S_regrepeat(pTHX_ regexp *prog, char **startposp, const regnode *p,
        scan = *startposp;
        if (max == REG_INFTY)
@@ -8091,8 +8091,8 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
                 * because is UTF-8, but it is actually ok to do so, since here, to
   diff --git a/t/re/pat_rt_report.t b/t/re/pat_rt_report.t
   index 2244fdf..9a9b5f5 100644
-  --- a/t/re/pat_rt_report.t
-  +++ b/t/re/pat_rt_report.t
+  --- t/re/pat_rt_report.t
+  +++ t/re/pat_rt_report.t
   @@ -22,7 +22,7 @@ BEGIN {
    }
    
@@ -8139,7 +8139,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 VERSION
   
-  version 0.94
+  version 0.96
   
   =head1 SYNOPSIS
   
@@ -8216,7 +8216,7 @@ DEVEL_PATCHPERL
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
-    $Devel::PatchPerl::Hints::VERSION = '0.94';
+    $Devel::PatchPerl::Hints::VERSION = '0.96';
   }
   
   #ABSTRACT: replacement 'hints' files
@@ -9925,7 +9925,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 VERSION
   
-  version 0.94
+  version 0.96
   
   =head1 SYNOPSIS
   
@@ -9999,7 +9999,7 @@ DEVEL_PATCHPERL_HINTS
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
   {
-    $Devel::PatchPerl::Plugin::VERSION = '0.94';
+    $Devel::PatchPerl::Plugin::VERSION = '0.96';
   }
   
   #ABSTRACT: Devel::PatchPerl plugins explained
@@ -10019,7 +10019,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   =head1 VERSION
   
-  version 0.94
+  version 0.96
   
   =head1 DESCRIPTION
   
@@ -42910,7 +42910,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 0.94
+version 0.96
 
 =head1 AUTHOR
 
