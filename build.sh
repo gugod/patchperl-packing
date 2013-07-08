@@ -12,7 +12,7 @@ else
     exit 1
 fi
 
-git clean -f
+git clean -d -f
 git pull
 
 cpanm Devel::PatchPerl App::FatPacker || exit 1
