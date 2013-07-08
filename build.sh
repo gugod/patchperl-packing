@@ -18,6 +18,13 @@ git pull
 cpanm Devel::PatchPerl App::FatPacker || exit 1
 
 hash -r
+hash -r
+
+if [[ "$PERLBREW_ROOT/bin/patchperl" == $(which patchperl) ]]; then
+    echo "The patch of patchperl does not look right, abort"
+    exit 1
+fi
+
 
 fatpack trace `which patchperl`
 fatpack packlists-for `cat fatpacker.trace` >packlists
