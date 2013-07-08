@@ -25,11 +25,11 @@ chmod +x patchperl
 versions=$(perl -MApp::FatPacker -MDevel::PatchPerl -e 'print "patchperl: " . Devel::PatchPerl->VERSION . ", fatpacker: " . App::FatPacker->VERSION . "\n"')
 
 git add patchperl
-set -x
+
 git_changed=$(git status --porcelain patchperl | grep patchperl)
 
 if [[ "$git_changed" == "" ]]; then
-    echo "Nothing changed. Skip the commit + push"
+    echo "Nothing changed. Skip committing."
     exit 0
 else
     git commit -m "rebuild with $versions"
