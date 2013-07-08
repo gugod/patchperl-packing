@@ -2,6 +2,8 @@
 
 perlenv=perl-5.8.8@patchperl-packing
 
+cd $(dirname $0)
+
 eval "$(perlbrew init-in-bash)"
 perlbrew use ${perlenv}
 
