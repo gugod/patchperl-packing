@@ -44,4 +44,7 @@ if [[ "$git_changed" == "" ]]; then
 else
     git commit -m "rebuild with $versions"
     git push
+    git clean -d -f
+    git pull
 fi
+
