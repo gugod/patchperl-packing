@@ -140,7 +140,7 @@ DEVEL_INNERPACKAGE
 $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
-    $Devel::PatchPerl::VERSION = '0.98';
+    $Devel::PatchPerl::VERSION = '1.00';
   }
   
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
@@ -420,6 +420,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
     my $diff = 'tmp.diff';
     _write_or_die($diff, $patch);
     die "No patch utility found\n" unless $patch_exe;
+    local $ENV{PATCH_GET} = 0; # I can't reproduce this at all, but meh.
     _run_or_die("$patch_exe -f -s -p0 <$diff");
     unlink $diff or die "unlink $diff: $!\n";
   }
@@ -2397,7 +2398,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   
   =head1 VERSION
   
-  version 0.98
+  version 1.00
   
   =head1 SYNOPSIS
   
@@ -2474,7 +2475,7 @@ DEVEL_PATCHPERL
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
-    $Devel::PatchPerl::Hints::VERSION = '0.98';
+    $Devel::PatchPerl::Hints::VERSION = '1.00';
   }
   
   #ABSTRACT: replacement 'hints' files
@@ -4183,7 +4184,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   
   =head1 VERSION
   
-  version 0.98
+  version 1.00
   
   =head1 SYNOPSIS
   
@@ -4257,7 +4258,7 @@ DEVEL_PATCHPERL_HINTS
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
   {
-    $Devel::PatchPerl::Plugin::VERSION = '0.98';
+    $Devel::PatchPerl::Plugin::VERSION = '1.00';
   }
   
   #ABSTRACT: Devel::PatchPerl plugins explained
@@ -4277,7 +4278,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   
   =head1 VERSION
   
-  version 0.98
+  version 1.00
   
   =head1 DESCRIPTION
   
@@ -33347,7 +33348,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 0.98
+version 1.00
 
 =head1 AUTHOR
 
