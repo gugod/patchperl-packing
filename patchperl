@@ -5,7 +5,7 @@
 BEGIN {
 my %fatpacked;
 
-$fatpacked{"Devel/InnerPackage.pm"} = <<'DEVEL_INNERPACKAGE';
+$fatpacked{"Devel/InnerPackage.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_INNERPACKAGE';
   package Devel::InnerPackage;
   
   use strict;
@@ -137,7 +137,7 @@ $fatpacked{"Devel/InnerPackage.pm"} = <<'DEVEL_INNERPACKAGE';
   1;
 DEVEL_INNERPACKAGE
 
-$fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
+$fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
   {
     $Devel::PatchPerl::VERSION = '1.14';
@@ -2676,7 +2676,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = <<'DEVEL_PATCHPERL';
   =cut
 DEVEL_PATCHPERL
 
-$fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
+$fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
   {
     $Devel::PatchPerl::Hints::VERSION = '1.14';
@@ -4566,7 +4566,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = <<'DEVEL_PATCHPERL_HINTS';
   =cut
 DEVEL_PATCHPERL_HINTS
 
-$fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
+$fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
   {
     $Devel::PatchPerl::Plugin::VERSION = '1.14';
@@ -4660,7 +4660,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = <<'DEVEL_PATCHPERL_PLUGIN';
   =cut
 DEVEL_PATCHPERL_PLUGIN
 
-$fatpacked{"ExtUtils/Command.pm"} = <<'EXTUTILS_COMMAND';
+$fatpacked{"ExtUtils/Command.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_COMMAND';
   package ExtUtils::Command;
   
   use 5.00503;
@@ -5032,7 +5032,7 @@ $fatpacked{"ExtUtils/Command.pm"} = <<'EXTUTILS_COMMAND';
   
 EXTUTILS_COMMAND
 
-$fatpacked{"ExtUtils/Command/MM.pm"} = <<'EXTUTILS_COMMAND_MM';
+$fatpacked{"ExtUtils/Command/MM.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_COMMAND_MM';
   package ExtUtils::Command::MM;
   
   require 5.006;
@@ -5310,7 +5310,7 @@ $fatpacked{"ExtUtils/Command/MM.pm"} = <<'EXTUTILS_COMMAND_MM';
   1;
 EXTUTILS_COMMAND_MM
 
-$fatpacked{"ExtUtils/Install.pm"} = <<'EXTUTILS_INSTALL';
+$fatpacked{"ExtUtils/Install.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_INSTALL';
   package ExtUtils::Install;
   use strict;
   
@@ -6669,7 +6669,7 @@ $fatpacked{"ExtUtils/Install.pm"} = <<'EXTUTILS_INSTALL';
   1;
 EXTUTILS_INSTALL
 
-$fatpacked{"ExtUtils/Installed.pm"} = <<'EXTUTILS_INSTALLED';
+$fatpacked{"ExtUtils/Installed.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_INSTALLED';
   package ExtUtils::Installed;
   
   use 5.00503;
@@ -7134,7 +7134,7 @@ $fatpacked{"ExtUtils/Installed.pm"} = <<'EXTUTILS_INSTALLED';
   =cut
 EXTUTILS_INSTALLED
 
-$fatpacked{"ExtUtils/Liblist.pm"} = <<'EXTUTILS_LIBLIST';
+$fatpacked{"ExtUtils/Liblist.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_LIBLIST';
   package ExtUtils::Liblist;
   
   use strict;
@@ -7423,7 +7423,7 @@ $fatpacked{"ExtUtils/Liblist.pm"} = <<'EXTUTILS_LIBLIST';
   
 EXTUTILS_LIBLIST
 
-$fatpacked{"ExtUtils/Liblist/Kid.pm"} = <<'EXTUTILS_LIBLIST_KID';
+$fatpacked{"ExtUtils/Liblist/Kid.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_LIBLIST_KID';
   package ExtUtils::Liblist::Kid;
   
   # XXX Splitting this out into its own .pm is a temporary solution.
@@ -8054,7 +8054,7 @@ $fatpacked{"ExtUtils/Liblist/Kid.pm"} = <<'EXTUTILS_LIBLIST_KID';
   1;
 EXTUTILS_LIBLIST_KID
 
-$fatpacked{"ExtUtils/MM.pm"} = <<'EXTUTILS_MM';
+$fatpacked{"ExtUtils/MM.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM';
   package ExtUtils::MM;
   
   use strict;
@@ -8147,7 +8147,7 @@ $fatpacked{"ExtUtils/MM.pm"} = <<'EXTUTILS_MM';
   }
 EXTUTILS_MM
 
-$fatpacked{"ExtUtils/MM_AIX.pm"} = <<'EXTUTILS_MM_AIX';
+$fatpacked{"ExtUtils/MM_AIX.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_AIX';
   package ExtUtils::MM_AIX;
   
   use strict;
@@ -8229,7 +8229,7 @@ $fatpacked{"ExtUtils/MM_AIX.pm"} = <<'EXTUTILS_MM_AIX';
   1;
 EXTUTILS_MM_AIX
 
-$fatpacked{"ExtUtils/MM_Any.pm"} = <<'EXTUTILS_MM_ANY';
+$fatpacked{"ExtUtils/MM_Any.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_ANY';
   package ExtUtils::MM_Any;
   
   use strict;
@@ -10952,7 +10952,7 @@ $fatpacked{"ExtUtils/MM_Any.pm"} = <<'EXTUTILS_MM_ANY';
   1;
 EXTUTILS_MM_ANY
 
-$fatpacked{"ExtUtils/MM_BeOS.pm"} = <<'EXTUTILS_MM_BEOS';
+$fatpacked{"ExtUtils/MM_BeOS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_BEOS';
   package ExtUtils::MM_BeOS;
   
   use strict;
@@ -11016,7 +11016,7 @@ $fatpacked{"ExtUtils/MM_BeOS.pm"} = <<'EXTUTILS_MM_BEOS';
   
 EXTUTILS_MM_BEOS
 
-$fatpacked{"ExtUtils/MM_Cygwin.pm"} = <<'EXTUTILS_MM_CYGWIN';
+$fatpacked{"ExtUtils/MM_Cygwin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_CYGWIN';
   package ExtUtils::MM_Cygwin;
   
   use strict;
@@ -11175,7 +11175,7 @@ $fatpacked{"ExtUtils/MM_Cygwin.pm"} = <<'EXTUTILS_MM_CYGWIN';
   1;
 EXTUTILS_MM_CYGWIN
 
-$fatpacked{"ExtUtils/MM_DOS.pm"} = <<'EXTUTILS_MM_DOS';
+$fatpacked{"ExtUtils/MM_DOS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_DOS';
   package ExtUtils::MM_DOS;
   
   use strict;
@@ -11243,7 +11243,7 @@ $fatpacked{"ExtUtils/MM_DOS.pm"} = <<'EXTUTILS_MM_DOS';
   1;
 EXTUTILS_MM_DOS
 
-$fatpacked{"ExtUtils/MM_Darwin.pm"} = <<'EXTUTILS_MM_DARWIN';
+$fatpacked{"ExtUtils/MM_Darwin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_DARWIN';
   package ExtUtils::MM_Darwin;
   
   use strict;
@@ -11293,7 +11293,7 @@ $fatpacked{"ExtUtils/MM_Darwin.pm"} = <<'EXTUTILS_MM_DARWIN';
   1;
 EXTUTILS_MM_DARWIN
 
-$fatpacked{"ExtUtils/MM_MacOS.pm"} = <<'EXTUTILS_MM_MACOS';
+$fatpacked{"ExtUtils/MM_MacOS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_MACOS';
   package ExtUtils::MM_MacOS;
   
   use strict;
@@ -11336,7 +11336,7 @@ $fatpacked{"ExtUtils/MM_MacOS.pm"} = <<'EXTUTILS_MM_MACOS';
   1;
 EXTUTILS_MM_MACOS
 
-$fatpacked{"ExtUtils/MM_NW5.pm"} = <<'EXTUTILS_MM_NW5';
+$fatpacked{"ExtUtils/MM_NW5.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_NW5';
   package ExtUtils::MM_NW5;
   
   =head1 NAME
@@ -11608,7 +11608,7 @@ $fatpacked{"ExtUtils/MM_NW5.pm"} = <<'EXTUTILS_MM_NW5';
   
 EXTUTILS_MM_NW5
 
-$fatpacked{"ExtUtils/MM_OS2.pm"} = <<'EXTUTILS_MM_OS2';
+$fatpacked{"ExtUtils/MM_OS2.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_OS2';
   package ExtUtils::MM_OS2;
   
   use strict;
@@ -11763,7 +11763,7 @@ $fatpacked{"ExtUtils/MM_OS2.pm"} = <<'EXTUTILS_MM_OS2';
   1;
 EXTUTILS_MM_OS2
 
-$fatpacked{"ExtUtils/MM_QNX.pm"} = <<'EXTUTILS_MM_QNX';
+$fatpacked{"ExtUtils/MM_QNX.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_QNX';
   package ExtUtils::MM_QNX;
   
   use strict;
@@ -11823,7 +11823,7 @@ $fatpacked{"ExtUtils/MM_QNX.pm"} = <<'EXTUTILS_MM_QNX';
   1;
 EXTUTILS_MM_QNX
 
-$fatpacked{"ExtUtils/MM_UWIN.pm"} = <<'EXTUTILS_MM_UWIN';
+$fatpacked{"ExtUtils/MM_UWIN.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_UWIN';
   package ExtUtils::MM_UWIN;
   
   use strict;
@@ -11890,7 +11890,7 @@ $fatpacked{"ExtUtils/MM_UWIN.pm"} = <<'EXTUTILS_MM_UWIN';
   1;
 EXTUTILS_MM_UWIN
 
-$fatpacked{"ExtUtils/MM_Unix.pm"} = <<'EXTUTILS_MM_UNIX';
+$fatpacked{"ExtUtils/MM_Unix.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_UNIX';
   package ExtUtils::MM_Unix;
   
   require 5.006;
@@ -15500,7 +15500,7 @@ $fatpacked{"ExtUtils/MM_Unix.pm"} = <<'EXTUTILS_MM_UNIX';
   __END__
 EXTUTILS_MM_UNIX
 
-$fatpacked{"ExtUtils/MM_VMS.pm"} = <<'EXTUTILS_MM_VMS';
+$fatpacked{"ExtUtils/MM_VMS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_VMS';
   package ExtUtils::MM_VMS;
   
   use strict;
@@ -17554,7 +17554,7 @@ $fatpacked{"ExtUtils/MM_VMS.pm"} = <<'EXTUTILS_MM_VMS';
   
 EXTUTILS_MM_VMS
 
-$fatpacked{"ExtUtils/MM_VOS.pm"} = <<'EXTUTILS_MM_VOS';
+$fatpacked{"ExtUtils/MM_VOS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_VOS';
   package ExtUtils::MM_VOS;
   
   use strict;
@@ -17607,7 +17607,7 @@ $fatpacked{"ExtUtils/MM_VOS.pm"} = <<'EXTUTILS_MM_VOS';
   1;
 EXTUTILS_MM_VOS
 
-$fatpacked{"ExtUtils/MM_Win32.pm"} = <<'EXTUTILS_MM_WIN32';
+$fatpacked{"ExtUtils/MM_Win32.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_WIN32';
   package ExtUtils::MM_Win32;
   
   use strict;
@@ -18247,7 +18247,7 @@ $fatpacked{"ExtUtils/MM_Win32.pm"} = <<'EXTUTILS_MM_WIN32';
   
 EXTUTILS_MM_WIN32
 
-$fatpacked{"ExtUtils/MM_Win95.pm"} = <<'EXTUTILS_MM_WIN95';
+$fatpacked{"ExtUtils/MM_Win95.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MM_WIN95';
   package ExtUtils::MM_Win95;
   
   use strict;
@@ -18374,7 +18374,7 @@ $fatpacked{"ExtUtils/MM_Win95.pm"} = <<'EXTUTILS_MM_WIN95';
   1;
 EXTUTILS_MM_WIN95
 
-$fatpacked{"ExtUtils/MY.pm"} = <<'EXTUTILS_MY';
+$fatpacked{"ExtUtils/MY.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MY';
   package ExtUtils::MY;
   
   use strict;
@@ -18417,7 +18417,7 @@ $fatpacked{"ExtUtils/MY.pm"} = <<'EXTUTILS_MY';
   =cut
 EXTUTILS_MY
 
-$fatpacked{"ExtUtils/MakeMaker.pm"} = <<'EXTUTILS_MAKEMAKER';
+$fatpacked{"ExtUtils/MakeMaker.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MAKEMAKER';
   # $Id$
   package ExtUtils::MakeMaker;
   
@@ -21367,7 +21367,7 @@ $fatpacked{"ExtUtils/MakeMaker.pm"} = <<'EXTUTILS_MAKEMAKER';
   =cut
 EXTUTILS_MAKEMAKER
 
-$fatpacked{"ExtUtils/MakeMaker/Config.pm"} = <<'EXTUTILS_MAKEMAKER_CONFIG';
+$fatpacked{"ExtUtils/MakeMaker/Config.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MAKEMAKER_CONFIG';
   package ExtUtils::MakeMaker::Config;
   
   use strict;
@@ -21409,7 +21409,7 @@ $fatpacked{"ExtUtils/MakeMaker/Config.pm"} = <<'EXTUTILS_MAKEMAKER_CONFIG';
   =cut
 EXTUTILS_MAKEMAKER_CONFIG
 
-$fatpacked{"ExtUtils/Manifest.pm"} = <<'EXTUTILS_MANIFEST';
+$fatpacked{"ExtUtils/Manifest.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MANIFEST';
   package ExtUtils::Manifest;
   
   require Exporter;
@@ -22308,7 +22308,7 @@ $fatpacked{"ExtUtils/Manifest.pm"} = <<'EXTUTILS_MANIFEST';
   1;
 EXTUTILS_MANIFEST
 
-$fatpacked{"ExtUtils/Mkbootstrap.pm"} = <<'EXTUTILS_MKBOOTSTRAP';
+$fatpacked{"ExtUtils/Mkbootstrap.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MKBOOTSTRAP';
   package ExtUtils::Mkbootstrap;
   
   # There's just too much Dynaloader incest here to turn on strict vars.
@@ -22420,7 +22420,7 @@ $fatpacked{"ExtUtils/Mkbootstrap.pm"} = <<'EXTUTILS_MKBOOTSTRAP';
   =cut
 EXTUTILS_MKBOOTSTRAP
 
-$fatpacked{"ExtUtils/Mksymlists.pm"} = <<'EXTUTILS_MKSYMLISTS';
+$fatpacked{"ExtUtils/Mksymlists.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_MKSYMLISTS';
   package ExtUtils::Mksymlists;
   
   use 5.006;
@@ -22735,7 +22735,7 @@ $fatpacked{"ExtUtils/Mksymlists.pm"} = <<'EXTUTILS_MKSYMLISTS';
   Last revised 14-Feb-1996, for Perl 5.002.
 EXTUTILS_MKSYMLISTS
 
-$fatpacked{"ExtUtils/Packlist.pm"} = <<'EXTUTILS_PACKLIST';
+$fatpacked{"ExtUtils/Packlist.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_PACKLIST';
   package ExtUtils::Packlist;
   
   use 5.00503;
@@ -23086,7 +23086,7 @@ $fatpacked{"ExtUtils/Packlist.pm"} = <<'EXTUTILS_PACKLIST';
   =cut
 EXTUTILS_PACKLIST
 
-$fatpacked{"ExtUtils/testlib.pm"} = <<'EXTUTILS_TESTLIB';
+$fatpacked{"ExtUtils/testlib.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'EXTUTILS_TESTLIB';
   package ExtUtils::testlib;
   
   use strict;
@@ -23130,7 +23130,7 @@ $fatpacked{"ExtUtils/testlib.pm"} = <<'EXTUTILS_TESTLIB';
   
 EXTUTILS_TESTLIB
 
-$fatpacked{"File/Copy/Recursive.pm"} = <<'FILE_COPY_RECURSIVE';
+$fatpacked{"File/Copy/Recursive.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FILE_COPY_RECURSIVE';
   package File::Copy::Recursive;
   
   use strict;
@@ -23829,7 +23829,7 @@ $fatpacked{"File/Copy/Recursive.pm"} = <<'FILE_COPY_RECURSIVE';
   =cut
 FILE_COPY_RECURSIVE
 
-$fatpacked{"File/Path.pm"} = <<'FILE_PATH';
+$fatpacked{"File/Path.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FILE_PATH';
   package File::Path;
   
   use 5.005_04;
@@ -24817,7 +24817,7 @@ $fatpacked{"File/Path.pm"} = <<'FILE_PATH';
   =cut
 FILE_PATH
 
-$fatpacked{"File/Temp.pm"} = <<'FILE_TEMP';
+$fatpacked{"File/Temp.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FILE_TEMP';
   package File::Temp;
   # ABSTRACT: return name and handle of a temporary file safely
   our $VERSION = '0.2301'; # VERSION
@@ -27397,7 +27397,7 @@ $fatpacked{"File/Temp.pm"} = <<'FILE_TEMP';
   =cut
 FILE_TEMP
 
-$fatpacked{"File/pushd.pm"} = <<'FILE_PUSHD';
+$fatpacked{"File/pushd.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'FILE_PUSHD';
   use strict;
   use warnings;
   package File::pushd;
@@ -27679,7 +27679,7 @@ $fatpacked{"File/pushd.pm"} = <<'FILE_PUSHD';
   =cut
 FILE_PUSHD
 
-$fatpacked{"JSON/PP/Compat5006.pm"} = <<'JSON_PP_COMPAT5006';
+$fatpacked{"JSON/PP/Compat5006.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'JSON_PP_COMPAT5006';
   package JSON::PP::Compat5006;
   
   use 5.006;
@@ -27861,7 +27861,7 @@ $fatpacked{"JSON/PP/Compat5006.pm"} = <<'JSON_PP_COMPAT5006';
   
 JSON_PP_COMPAT5006
 
-$fatpacked{"Module/Pluggable.pm"} = <<'MODULE_PLUGGABLE';
+$fatpacked{"Module/Pluggable.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'MODULE_PLUGGABLE';
   package Module::Pluggable;
   
   use strict;
@@ -28321,7 +28321,7 @@ $fatpacked{"Module/Pluggable.pm"} = <<'MODULE_PLUGGABLE';
   
 MODULE_PLUGGABLE
 
-$fatpacked{"Module/Pluggable/Object.pm"} = <<'MODULE_PLUGGABLE_OBJECT';
+$fatpacked{"Module/Pluggable/Object.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'MODULE_PLUGGABLE_OBJECT';
   package Module::Pluggable::Object;
   
   use strict;
@@ -28729,7 +28729,7 @@ $fatpacked{"Module/Pluggable/Object.pm"} = <<'MODULE_PLUGGABLE_OBJECT';
   
 MODULE_PLUGGABLE_OBJECT
 
-$fatpacked{"Version/Requirements.pm"} = <<'VERSION_REQUIREMENTS';
+$fatpacked{"Version/Requirements.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'VERSION_REQUIREMENTS';
   use strict;
   use warnings;
   package Version::Requirements;
@@ -29328,7 +29328,7 @@ $fatpacked{"Version/Requirements.pm"} = <<'VERSION_REQUIREMENTS';
   
 VERSION_REQUIREMENTS
 
-$fatpacked{"i686-linux/Cwd.pm"} = <<'I686-LINUX_CWD';
+$fatpacked{"i686-linux/Cwd.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_CWD';
   package Cwd;
   
   =head1 NAME
@@ -30167,7 +30167,7 @@ $fatpacked{"i686-linux/Cwd.pm"} = <<'I686-LINUX_CWD';
   1;
 I686-LINUX_CWD
 
-$fatpacked{"i686-linux/File/Spec.pm"} = <<'I686-LINUX_FILE_SPEC';
+$fatpacked{"i686-linux/File/Spec.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC';
   package File::Spec;
   
   use strict;
@@ -30509,7 +30509,7 @@ $fatpacked{"i686-linux/File/Spec.pm"} = <<'I686-LINUX_FILE_SPEC';
   =cut
 I686-LINUX_FILE_SPEC
 
-$fatpacked{"i686-linux/File/Spec/Cygwin.pm"} = <<'I686-LINUX_FILE_SPEC_CYGWIN';
+$fatpacked{"i686-linux/File/Spec/Cygwin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_CYGWIN';
   package File::Spec::Cygwin;
   
   use strict;
@@ -30667,7 +30667,7 @@ $fatpacked{"i686-linux/File/Spec/Cygwin.pm"} = <<'I686-LINUX_FILE_SPEC_CYGWIN';
   1;
 I686-LINUX_FILE_SPEC_CYGWIN
 
-$fatpacked{"i686-linux/File/Spec/Epoc.pm"} = <<'I686-LINUX_FILE_SPEC_EPOC';
+$fatpacked{"i686-linux/File/Spec/Epoc.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_EPOC';
   package File::Spec::Epoc;
   
   use strict;
@@ -30749,7 +30749,7 @@ $fatpacked{"i686-linux/File/Spec/Epoc.pm"} = <<'I686-LINUX_FILE_SPEC_EPOC';
   1;
 I686-LINUX_FILE_SPEC_EPOC
 
-$fatpacked{"i686-linux/File/Spec/Functions.pm"} = <<'I686-LINUX_FILE_SPEC_FUNCTIONS';
+$fatpacked{"i686-linux/File/Spec/Functions.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_FUNCTIONS';
   package File::Spec::Functions;
   
   use File::Spec;
@@ -30862,7 +30862,7 @@ $fatpacked{"i686-linux/File/Spec/Functions.pm"} = <<'I686-LINUX_FILE_SPEC_FUNCTI
   
 I686-LINUX_FILE_SPEC_FUNCTIONS
 
-$fatpacked{"i686-linux/File/Spec/Mac.pm"} = <<'I686-LINUX_FILE_SPEC_MAC';
+$fatpacked{"i686-linux/File/Spec/Mac.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_MAC';
   package File::Spec::Mac;
   
   use strict;
@@ -31651,7 +31651,7 @@ $fatpacked{"i686-linux/File/Spec/Mac.pm"} = <<'I686-LINUX_FILE_SPEC_MAC';
   1;
 I686-LINUX_FILE_SPEC_MAC
 
-$fatpacked{"i686-linux/File/Spec/OS2.pm"} = <<'I686-LINUX_FILE_SPEC_OS2';
+$fatpacked{"i686-linux/File/Spec/OS2.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_OS2';
   package File::Spec::OS2;
   
   use strict;
@@ -31928,7 +31928,7 @@ $fatpacked{"i686-linux/File/Spec/OS2.pm"} = <<'I686-LINUX_FILE_SPEC_OS2';
   =cut
 I686-LINUX_FILE_SPEC_OS2
 
-$fatpacked{"i686-linux/File/Spec/Unix.pm"} = <<'I686-LINUX_FILE_SPEC_UNIX';
+$fatpacked{"i686-linux/File/Spec/Unix.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_UNIX';
   package File::Spec::Unix;
   
   use strict;
@@ -32484,7 +32484,7 @@ $fatpacked{"i686-linux/File/Spec/Unix.pm"} = <<'I686-LINUX_FILE_SPEC_UNIX';
   1;
 I686-LINUX_FILE_SPEC_UNIX
 
-$fatpacked{"i686-linux/File/Spec/VMS.pm"} = <<'I686-LINUX_FILE_SPEC_VMS';
+$fatpacked{"i686-linux/File/Spec/VMS.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_VMS';
   package File::Spec::VMS;
   
   use strict;
@@ -33165,7 +33165,7 @@ $fatpacked{"i686-linux/File/Spec/VMS.pm"} = <<'I686-LINUX_FILE_SPEC_VMS';
   1;
 I686-LINUX_FILE_SPEC_VMS
 
-$fatpacked{"i686-linux/File/Spec/Win32.pm"} = <<'I686-LINUX_FILE_SPEC_WIN32';
+$fatpacked{"i686-linux/File/Spec/Win32.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'I686-LINUX_FILE_SPEC_WIN32';
   package File::Spec::Win32;
   
   use strict;
@@ -33615,24 +33615,37 @@ I686-LINUX_FILE_SPEC_WIN32
 
 s/^  //mg for values %fatpacked;
 
-unshift @INC, sub {
-  if (my $fat = $fatpacked{$_[1]}) {
-    if ($] < 5.008) {
-      return sub {
-        return 0 unless length $fat;
-        $fat =~ s/^([^\n]*\n?)//;
-        $_ = $1;
-        return 1;
-      };
-    }
-    open my $fh, '<', \$fat
-      or die "FatPacker error loading $_[1] (could be a perl installation issue?)";
-    return $fh;
-  }
-  return
-};
+my $class = 'FatPacked::'.(0+\%fatpacked);
+no strict 'refs';
+*{"${class}::files"} = sub { keys %{$_[0]} };
 
-} # END OF FATPACK CODE
+if ($] < 5.008) {
+  *{"${class}::INC"} = sub {
+     if (my $fat = $_[0]{$_[1]}) {
+       return sub {
+         return 0 unless length $fat;
+         $fat =~ s/^([^\n]*\n?)//;
+         $_ = $1;
+         return 1;
+       };
+     }
+     return;
+  };
+}
+
+else {
+  *{"${class}::INC"} = sub {
+    if (my $fat = $_[0]{$_[1]}) {
+      open my $fh, '<', \$fat
+        or die "FatPacker error loading $_[1] (could be a perl installation issue?)";
+      return $fh;
+    }
+    return;
+  };
+}
+
+unshift @INC, bless \%fatpacked, $class;
+  } # END OF FATPACK CODE
 
 #!/apps/perlbrew/perls/perl-5.8.8/bin/perl
 
