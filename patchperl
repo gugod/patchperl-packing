@@ -139,7 +139,7 @@ DEVEL_INNERPACKAGE
 
 $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
-  $Devel::PatchPerl::VERSION = '1.20';
+  $Devel::PatchPerl::VERSION = '1.22';
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
   
   use strict;
@@ -154,7 +154,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   @ISA       = qw(Exporter);
   @EXPORT_OK = qw(patch_source);
   
-  my $patch_exe = _can_run('patch');
+  my $patch_exe = _can_run('patch') || _can_run('gpatch');
   
   my @patch = (
     {
@@ -2652,7 +2652,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 VERSION
   
-  version 1.20
+  version 1.22
   
   =head1 SYNOPSIS
   
@@ -2728,7 +2728,7 @@ DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
-  $Devel::PatchPerl::Hints::VERSION = '1.20';
+  $Devel::PatchPerl::Hints::VERSION = '1.22';
   #ABSTRACT: replacement 'hints' files
   
   use strict;
@@ -4538,7 +4538,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 VERSION
   
-  version 1.20
+  version 1.22
   
   =head1 SYNOPSIS
   
@@ -4611,7 +4611,7 @@ DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
-  $Devel::PatchPerl::Plugin::VERSION = '1.20';
+  $Devel::PatchPerl::Plugin::VERSION = '1.22';
   #ABSTRACT: Devel::PatchPerl plugins explained
   
   use strict;
@@ -4631,7 +4631,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 VERSION
   
-  version 1.20
+  version 1.22
   
   =head1 DESCRIPTION
   
@@ -33716,7 +33716,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 1.20
+version 1.22
 
 =head1 AUTHOR
 
