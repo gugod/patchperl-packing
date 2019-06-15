@@ -139,7 +139,7 @@ DEVEL_INNERPACKAGE
 
 $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
-  $Devel::PatchPerl::VERSION = '1.62';
+  $Devel::PatchPerl::VERSION = '1.64';
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
   
   use strict;
@@ -7930,6 +7930,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
     my $perlver = shift;
     my $num = _norm_ver( $perlver );
     return unless $num < 5.021010;
+    return if    $num == 5.020003;
     if ( $num < 5.006001 ) {
       return _patch(<<'UH2PH560');
   --- utils/h2ph.PL
@@ -9212,6 +9213,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
     my $perlver = shift;
     my $num = _norm_ver( $perlver );
     return unless $num < 5.021010;
+    return if    $num == 5.020003;
     if ( $num >= 5.013005 ) {
       _patch(<<'LH2PH1');
   --- lib/h2ph.t
@@ -9273,7 +9275,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 VERSION
   
-  version 1.62
+  version 1.64
   
   =head1 SYNOPSIS
   
@@ -9349,7 +9351,7 @@ DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
-  $Devel::PatchPerl::Hints::VERSION = '1.62';
+  $Devel::PatchPerl::Hints::VERSION = '1.64';
   #ABSTRACT: replacement 'hints' files
   
   use strict;
@@ -11388,7 +11390,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 VERSION
   
-  version 1.62
+  version 1.64
   
   =head1 SYNOPSIS
   
@@ -11461,7 +11463,7 @@ DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
-  $Devel::PatchPerl::Plugin::VERSION = '1.62';
+  $Devel::PatchPerl::Plugin::VERSION = '1.64';
   #ABSTRACT: Devel::PatchPerl plugins explained
   
   use strict;
@@ -11481,7 +11483,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 VERSION
   
-  version 1.62
+  version 1.64
   
   =head1 DESCRIPTION
   
@@ -40568,7 +40570,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 1.62
+version 1.64
 
 =head1 AUTHOR
 
