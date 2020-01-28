@@ -1336,7 +1336,7 @@ DEVEL_INNERPACKAGE
 
 $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
-  $Devel::PatchPerl::VERSION = '1.82';
+  $Devel::PatchPerl::VERSION = '1.84';
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
   
   use strict;
@@ -11118,7 +11118,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   sub _patch_sdbm_file_c {
     my $perlver = shift;
     my $num = _norm_ver( $perlver );
-    return unless $num > 5.001000;
+    return unless $num > 5.010000;
     return unless $num < 5.014004;
     _patch_b64(<<'SDBMFILEC');
   LS0tIGV4dC9TREJNX0ZpbGUvc2RibS9zZGJtLmMKKysrIGV4dC9TREJNX0ZpbGUvc2RibS9zZGJt
@@ -11162,7 +11162,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 VERSION
   
-  version 1.82
+  version 1.84
   
   =head1 SYNOPSIS
   
@@ -11238,7 +11238,7 @@ DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
-  $Devel::PatchPerl::Hints::VERSION = '1.82';
+  $Devel::PatchPerl::Hints::VERSION = '1.84';
   #ABSTRACT: replacement 'hints' files
   
   use strict;
@@ -13286,7 +13286,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 VERSION
   
-  version 1.82
+  version 1.84
   
   =head1 SYNOPSIS
   
@@ -13359,7 +13359,7 @@ DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
-  $Devel::PatchPerl::Plugin::VERSION = '1.82';
+  $Devel::PatchPerl::Plugin::VERSION = '1.84';
   #ABSTRACT: Devel::PatchPerl plugins explained
   
   use strict;
@@ -13379,7 +13379,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 VERSION
   
-  version 1.82
+  version 1.84
   
   =head1 DESCRIPTION
   
@@ -45752,7 +45752,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 1.82
+version 1.84
 
 =head1 AUTHOR
 
