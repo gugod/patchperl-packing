@@ -1336,7 +1336,7 @@ DEVEL_INNERPACKAGE
 
 $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
-  $Devel::PatchPerl::VERSION = '1.98';
+  $Devel::PatchPerl::VERSION = '2.00';
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
   
   use strict;
@@ -11505,7 +11505,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   IC1EX19HTlVDX18iCiBlc2FjCiBjYXNlICIkbWlwc190eXBlIiBpbgogJycpOzsK
   CONFGCC10520
     }
-    if ( $num < 5.023005 ) {
+    if ( $num < 5.023005 and ! ( $num >= 5.022002 and $num < 5.023000 ) ) {
       return _patch_b64(<<'CONFGCC10522');
   LS0tIENvbmZpZ3VyZQorKysgQ29uZmlndXJlCkBAIC00NjU3LDcgKzQ2NTcsNyBAQCBlbHNlCiBm
   aQogJHJtIC1mIHRyeSB0cnkuKgogY2FzZSAiJGdjY3ZlcnNpb24iIGluCi0xKikgY3BwPWAuL2xv
@@ -11541,7 +11541,9 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   PiY0Cg==
   CONFGCC10522
     }
-    if ( $num <= 5.026000 or ( $num >= 5.027000 and $num < 5.027003 ) ) {
+    if ( ( $num <= 5.026000 or ( $num >= 5.027000 and $num < 5.027003 ) )
+         and ! ( $num >= 5.024003 and $num < 5.025000  )
+    ) {
       return _patch_b64(<<'CONFGCC10526');
   LS0tIENvbmZpZ3VyZQorKysgQ29uZmlndXJlCkBAIC00NzAzLDcgKzQ3MDMsNyBAQCBlbHNlCiBm
   aQogJHJtIC1mIHRyeSB0cnkuKgogY2FzZSAiJGdjY3ZlcnNpb24iIGluCi0xKikgY3BwPWAuL2xv
@@ -11660,7 +11662,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 VERSION
   
-  version 1.98
+  version 2.00
   
   =head1 SYNOPSIS
   
@@ -11746,7 +11748,7 @@ DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
-  $Devel::PatchPerl::Hints::VERSION = '1.98';
+  $Devel::PatchPerl::Hints::VERSION = '2.00';
   #ABSTRACT: replacement 'hints' files
   
   use strict;
@@ -13794,7 +13796,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 VERSION
   
-  version 1.98
+  version 2.00
   
   =head1 SYNOPSIS
   
@@ -13867,7 +13869,7 @@ DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
-  $Devel::PatchPerl::Plugin::VERSION = '1.98';
+  $Devel::PatchPerl::Plugin::VERSION = '2.00';
   #ABSTRACT: Devel::PatchPerl plugins explained
   
   use strict;
@@ -13887,7 +13889,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 VERSION
   
-  version 1.98
+  version 2.00
   
   =head1 DESCRIPTION
   
@@ -49051,7 +49053,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 1.98
+version 2.00
 
 =head1 SYNOPSIS
 
