@@ -1336,7 +1336,7 @@ DEVEL_INNERPACKAGE
 
 $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL';
   package Devel::PatchPerl;
-  $Devel::PatchPerl::VERSION = '2.06';
+  $Devel::PatchPerl::VERSION = '2.08';
   # ABSTRACT: Patch perl source a la Devel::PPPort's buildperl.pl
   
   use strict;
@@ -11688,7 +11688,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
     return if ( $num > 5.032000 && $num < 5.033000 ) or $num > 5.033005; # Reevaluate if v5.30.4 appears
     _patch_b64(<<'BIGSURDL');
   LS0tIGV4dC9EeW5hTG9hZGVyL0R5bmFMb2FkZXJfcG0uUEwKKysrIGV4dC9EeW5hTG9hZGVyL0R5
-  bmFMb2FkZXJfcG0uUEwKQEAgLTQ5NCwxMiArNDk0LDIwIEBAIHN1YiBkbF9maW5kZmlsZSB7CiAg
+  bmFMb2FkZXJfcG0uUEwKQEAgLTQ5NCwxMiArNDk0LDE4IEBAIHN1YiBkbF9maW5kZmlsZSB7CiAg
   ICAgICAgICAgICBmb3JlYWNoICRuYW1lIChAbmFtZXMpIHsKIAkJbXkoJGZpbGUpID0gIiRkaXIk
   ZGlyc2VwJG5hbWUiOwogICAgICAgICAgICAgICAgIHByaW50IFNUREVSUiAiIGNoZWNraW5nIGlu
   ICRkaXIgZm9yICRuYW1lXG4iIGlmICRkbF9kZWJ1ZzsKLQkJJGZpbGUgPSAoJGRvX2V4cGFuZCkg
@@ -11699,10 +11699,10 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   ZWQgdG8gbG9vayBhbnkgZnVydGhlcgorCQl9CisJCWVsc2lmICgtZiAkZmlsZSkgewogICAgICAg
   ICAgICAgICAgICAgICBwdXNoKEBmb3VuZCwgJGZpbGUpOwogICAgICAgICAgICAgICAgICAgICBu
   ZXh0IGFyZzsgIyBubyBuZWVkIHRvIGxvb2sgYW55IGZ1cnRoZXIKICAgICAgICAgICAgICAgICB9
-  CisJCTw8JF5PLWVxLWRhcndpbj4+CisJCWVsc2lmIChkbF9sb2FkX2ZpbGUoJGZpbGUsIDApKSB7
-  CisgICAgICAgICAgICAgICAgICAgIHB1c2ggQGZvdW5kLCAkZmlsZTsKKyAgICAgICAgICAgICAg
-  ICAgICAgbmV4dCBhcmc7ICMgbm8gbmVlZCB0byBsb29rIGFueSBmdXJ0aGVyCisJCX0KKwkJPDwv
-  JF5PLWVxLWRhcndpbj4+CiAgICAgICAgICAgICB9CiAgICAgICAgIH0KICAgICB9Cg==
+  CisJCWVsc2lmIChkbF9sb2FkX2ZpbGUoJGZpbGUsIDApKSB7CisgICAgICAgICAgICAgICAgICAg
+  IHB1c2ggQGZvdW5kLCAkZmlsZTsKKyAgICAgICAgICAgICAgICAgICAgbmV4dCBhcmc7ICMgbm8g
+  bmVlZCB0byBsb29rIGFueSBmdXJ0aGVyCisJCX0KICAgICAgICAgICAgIH0KICAgICAgICAgfQog
+  ICAgIH0K
   BIGSURDL
   }
   
@@ -11922,7 +11922,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 VERSION
   
-  version 2.06
+  version 2.08
   
   =head1 SYNOPSIS
   
@@ -11998,7 +11998,7 @@ $fatpacked{"Devel/PatchPerl.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2020 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2021 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
@@ -12008,7 +12008,7 @@ DEVEL_PATCHPERL
 
 $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_HINTS';
   package Devel::PatchPerl::Hints;
-  $Devel::PatchPerl::Hints::VERSION = '2.06';
+  $Devel::PatchPerl::Hints::VERSION = '2.08';
   #ABSTRACT: replacement 'hints' files
   
   use strict;
@@ -14079,7 +14079,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 VERSION
   
-  version 2.06
+  version 2.08
   
   =head1 SYNOPSIS
   
@@ -14142,7 +14142,7 @@ $fatpacked{"Devel/PatchPerl/Hints.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2020 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2021 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
@@ -14152,7 +14152,7 @@ DEVEL_PATCHPERL_HINTS
 
 $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'DEVEL_PATCHPERL_PLUGIN';
   package Devel::PatchPerl::Plugin;
-  $Devel::PatchPerl::Plugin::VERSION = '2.06';
+  $Devel::PatchPerl::Plugin::VERSION = '2.08';
   #ABSTRACT: Devel::PatchPerl plugins explained
   
   use strict;
@@ -14172,7 +14172,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 VERSION
   
-  version 2.06
+  version 2.08
   
   =head1 DESCRIPTION
   
@@ -14235,7 +14235,7 @@ $fatpacked{"Devel/PatchPerl/Plugin.pm"} = '#line '.(1+__LINE__).' "'.__FILE__."\
   
   =head1 COPYRIGHT AND LICENSE
   
-  This software is copyright (c) 2020 by Chris Williams and Marcus Holland-Moritz.
+  This software is copyright (c) 2021 by Chris Williams and Marcus Holland-Moritz.
   
   This is free software; you can redistribute it and/or modify it under
   the same terms as the Perl 5 programming language system itself.
@@ -49336,7 +49336,7 @@ patchperl - patch a perl source tree
 
 =head1 VERSION
 
-version 2.06
+version 2.08
 
 =head1 SYNOPSIS
 
@@ -49365,7 +49365,7 @@ Chris Williams <chris@bingosnet.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2020 by Chris Williams and Marcus Holland-Moritz.
+This software is copyright (c) 2021 by Chris Williams and Marcus Holland-Moritz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
