@@ -1,6 +1,6 @@
 #!/bin/bash
 
-perlenv=perl-5.8.8@patchperl-packing
+perlenv=perl-5.8.9@patchperl-packing
 
 cd $(dirname $0)
 
